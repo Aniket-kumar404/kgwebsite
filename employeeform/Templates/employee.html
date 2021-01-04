@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function check() {
+            Pass = document.getElementById("pass").value;
+            cPass = document.getElementById("cpass").value;
+            if (pass == cpass)
+                return true;
+            else {
+                document.getElementById("invalid").style.visibility = "hidden";
+                return false;
+            }
+        }
+    </script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    
+        
+        #register {
+            width: 30%;
+            height: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            box-shadow: 5px 10px 5px 10px rgb(18, 81, 218);
+            transform: translate(-50%, -50%);
+           
+            font-size: 20px;
+            min-width: 700px;
+            ;
+        }
+        
+        input[type="text"],
+        input[type="password"] {
+            background: none;
+            font-size: 20px;
+            color: rgb(0, 7, 1);
+            outline: none;
+            border: none;
+            border-bottom: 4px solid rgb(18, 81, 218);
+        }
+        
+        input[type="submit"] {
+            color: white;
+            background: rgb(18, 81, 218);
+            border: 2px solid rgb(18, 81, 218);
+            border-width: medium;
+            border-radius: 10px;
+            height: 40px;
+            width: 200px;
+            font-size: 20px;
+            size: auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 70px;
+            font-style: italic;
+            color: snow;
+            text-shadow: 2px 2px 8px rgb(18, 81, 218);
+        }
+    </style>
+
+    <title>Employee Form</title>
+</head>
+
+<body>
+   
+
+    <div id="register">
+  
+        <form action="submit" method="POST">
+       {% csrf_token %}
+    
+            <br><br> 
+            FirstName: <input type="text" name="firstName" autocomplete="off" required>
+            <br><br> 
+            LastName: <input type="text" name="lastName" autocomplete="off">
+            <br><br>  
+            Email: <input type="text" name="email" autocomplete="off" required>
+            <br><br>
+            Date Of Birth: <input type="date" name="date_of_birth" autocomplete="off" required>
+            <br><br>
+            State: <input type="text" name="state" autocomplete="off" required>
+            <br><br>
+
+            Designation: <input type="text" name="designation" autocomplete="off" required>
+            <br><br>
+          
+
+            <input type="submit" value="Add">
+        </form>
+
+
+    </div>
+</body>
+
+</html>

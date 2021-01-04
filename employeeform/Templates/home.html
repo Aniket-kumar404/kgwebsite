@@ -1,0 +1,64 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+.tab{
+margin-top: 10%;
+margin-left: 20%;
+    
+}
+#add{
+margin-left: 38%;
+margin-top: 20px;
+
+}
+table ,td ,th{
+    border: 2px solid black;
+ border-collapse: collapse;
+}
+table th{
+
+    font-size: 30px;
+}
+
+table th,td{
+    text-align: center;
+    width: 200px;
+}
+
+a{
+    color: blue;
+    text-decoration: none;
+}
+    </style>
+
+</head>
+<body>
+
+    
+<div class="tab">
+ <table>
+   <tr>
+       <th>Name</th>
+       <th> view</th>
+   </tr>
+   {% for x in dict %}
+   <tr>
+       <td>{{x.first_name}}</td>
+       <td> <a href="view/{{x.first_name}}">view</a></td>
+   </tr>
+   {% endfor %}
+   </table>
+</div>
+
+
+    <form action="adduser">
+    <button type="submit" id="add">ADD EMPLOYEE</button>
+
+
+</form>
+</body>
+</html>
